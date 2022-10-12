@@ -10,4 +10,4 @@ const quotesSchema = new mongoose.Schema({
  }
 })
 
-mongoose.model("Quotes", quotesSchema)
+mongoose.model("Quote", quotesSchema)
