@@ -3,9 +3,8 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-co
 import typeDefs from "./schemaGql.js";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
-import { MONGO_URI, JWT_SECRET } from "./config.js";
 
-mongoose.connect(MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -27,7 +26,7 @@ import resolvers from "./resolvers.js";
 const context = ({ req }) => {
   const { authorization } = req.headers;
   if (authorization) {
-    const { userId } = jwt.verify(authorization, JWT_SECRET);
+    const { userId } = jwt.verify(authorization, process.env.JWT_SECRET);
     return { userId };
   }
 };
