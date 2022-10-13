@@ -1,6 +1,8 @@
 import CreateQuote from "./components/CreateQuote";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import NotFound from "./components/NotFound";
+import OtherUserProfile from "./components/OtherUserProfile";
 import Profile from "./components/Profile";
 import Signup from "./components/Signup";
 
@@ -24,5 +26,13 @@ export const routes = [
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/profile/:userid",
+    element: <OtherUserProfile />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ];
