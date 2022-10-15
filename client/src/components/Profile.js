@@ -28,9 +28,9 @@ export default function Profile() {
         <h6>Email - {data.user.email}</h6>
       </div>
       <h3>Your quotes</h3>
-      {data.user.quotes.map((quo) => {
+      {data.user.quotes.map((quo, index) => {
         return (
-          <blockquote>
+          <blockquote key={index}>
             <h6>{quo.name}</h6>
           </blockquote>
         );
