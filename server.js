@@ -4,7 +4,7 @@ import {
     ApolloServerPluginDrainHttpServer,
     ApolloServerPluginLandingPageDisabled
 } from 'apollo-server-core'
-import typeDefs from './schemaGql.js'
+import typeDefs from './schemagql.js'
 import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
